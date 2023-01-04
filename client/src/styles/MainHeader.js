@@ -5,7 +5,7 @@ width: 475px;
 height: 65px;
 background-color: ${(props) => props.bg};
 position: relative;
-top: 10px;
+top: 0px;
 display: flex;
 justify-content: ${(props) => props.jc};
 align-items: center;

@@ -5,7 +5,7 @@ height: 275px;
 width: 475px;
 background-color: ${(props) => props.bg};
 position: relative;
-top: 30px;
+top: 20px;
 display: flex;
 flex-direction: column;
 align-items: ${(props) => props.ai};
