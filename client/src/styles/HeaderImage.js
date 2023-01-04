@@ -4,8 +4,8 @@ export const HeaderImage = styled.div`
 position: absolute;
 top: 0px;
 width: 100vw;
-height: 285px;
+height: 45%;
 left: 0px;
-background-color: red;
+background-color: ${(props) => props.bg};
 overflow: hidden;
 `

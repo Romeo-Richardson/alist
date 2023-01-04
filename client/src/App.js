@@ -59,7 +59,7 @@ function App() {
   return (
     <>
       <Global bg={styles.secondaryColor}></Global>
-      <HeaderImage>
+      <HeaderImage bg={styles.secondaryColor}>
         {theme === 'Dark' ?
           <img style={{ height: '100%', width: '100%' }} src={bgImageDark}></img> :
           <img style={{ heigh: '100%', width: '100%' }} src={bgImageLight}></img>}
