@@ -3,13 +3,13 @@
 // Get Request
 
 export const getUsers = () => {
-    const fetchUsers = fetch('http://localhost:3001/handleUsers').then((res) => res.json())
+    const fetchUsers = fetch('https://alistportfolio.herokuapp.com/handleUsers').then((res) => res.json())
     return fetchUsers
 }
 
 // Post Request, create user
 export const createUser = async (newUser) => {
-    await fetch('http://localhost:3001/handleUsers', {
+    await fetch('https://alistportfolio.herokuapp.com/handleUsers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newUser)
@@ -19,7 +19,7 @@ export const createUser = async (newUser) => {
 // Put Request, todo items
 
 export const sendTodo = async (todoData) => {
-    await fetch('http://localhost:3001/handleUsers', {
+    await fetch('https://alistportfolio.herokuapp.com/handleUsers', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(todoData)
@@ -29,7 +29,7 @@ export const sendTodo = async (todoData) => {
 // delete todo
 
 export const handleTodo = async (todoData) => {
-    await fetch('http://localhost:3001/handleUsers', {
+    await fetch('https://alistportfolio.herokuapp.com/handleUsers', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(todoData)

@@ -6,9 +6,7 @@
     "mongoose": "^6.8.1"
   },
   "scripts": {
-    "build":"cd client && npm run build",
-    "install-client":"cd client && npm install",
-    "heroku-postbuild":"npm run install-client && npm run build",
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-postbuild":"cd client && npm run build"
   }
 }
