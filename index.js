@@ -11,7 +11,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 const UserModel = require('./models/UserModel')
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://ZirrKing:65937675299041230290728123677583@cluster0.5r4pdz7.mongodb.net/alist?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGODB_URI)
 
 app.get('/handleUsers', async (req, res) => {
     const users = await UserModel.find()
@@ -67,5 +67,10 @@ if (process.env.NOD_ENV === 'production') {
 }
 
 app.listen(process.env.PORT || 3001, () => {
-    console.log('Server Running')
+    console.log(process.env.NOD_ENV)
+    if (process.env.PORT) {
+        console.log(`Server Running on port ${process.env.PORT}`)
+    } else {
+        console.log('Server Running on port 3001')
+    }
 })
