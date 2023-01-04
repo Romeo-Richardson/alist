@@ -4,7 +4,7 @@ import { Hover } from '../styles/Hover'
 const IconCross = ({ todoID, fnc }) => {
 
     return (
-        <Hover id={todoID} onClick={fnc}>
+        <Hover right={'15px'} id={todoID} onClick={fnc}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
