@@ -11,7 +11,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 const UserModel = require('./models/UserModel')
 
-mongoose.connect('mongodb+srv://ZirrKing:65937675299041230290728123677583@cluster0.5r4pdz7.mongodb.net/alist?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://ZirrKing:65937675299041230290728123677583@cluster0.5r4pdz7.mongodb.net/alist?retryWrites=true&w=majority')
 
 app.get('/handleUsers', async (req, res) => {
     const users = await UserModel.find()
@@ -61,6 +61,10 @@ app.patch('/handleUsers', async (req, res) => {
         } else console.log(newTodos)
     })
 })
+
+if (process.env.NOD_ENV === 'production') {
+    app.use(express.static('client/build'))
+}
 
 app.listen(process.env.PORT || 3001, () => {
     console.log('Server Running')
