@@ -130,10 +130,14 @@ const Main = ({ updateStyles }) => {
                         status: 'Active'
                     }]
             }
-            mutateUsers.mutate(todoData, {
-                onSuccess: () => { console.log('Mutate') },
-                onSettled: () => { console.log('Mutate') }
-            })
+            if (todoInput !== '') {
+                mutateUsers.mutate(todoData, {
+                    onSuccess: () => { console.log('Mutate') },
+                    onSettled: () => { console.log('Mutate') }
+                })
+            } else {
+                alert('Please enter a Todo')
+            }
         }, // Handles deleting Todo from DB
         deleteTodo: (id) => {
             setTodoID(id)
